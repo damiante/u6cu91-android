@@ -1,5 +1,5 @@
 plugins {
-    alias(libs.plugins.android.library)
+    id("com.android.library") version "9.2.1"
     `maven-publish`
 }
 
@@ -30,8 +30,8 @@ android {
 dependencies {
     // Flow/StateFlow appear in the public API, so consumers need coroutines on their compile
     // classpath too — hence api, not implementation.
-    api(libs.kotlinx.coroutines.core)
-    testImplementation(libs.junit)
+    api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
+    testImplementation("junit:junit:4.13.2")
 }
 
 // Publication consumed by JitPack (or `publishToMavenLocal` for local testing). JitPack
@@ -42,7 +42,7 @@ publishing {
         register<MavenPublication>("release") {
             groupId = "com.damiantesta"
             artifactId = "u6cu91-android"
-            version = "0.1.0"
+            version = "0.1.1"
             afterEvaluate {
                 from(components["release"])
             }
