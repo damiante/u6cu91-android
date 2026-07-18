@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Merged into the consuming app's manifest. Not required, so apps using this SDK still
+         install on devices/emulators without USB-host support. -->
+    <uses-feature android:name="android.hardware.usb.host" android:required="false" />
+
+</manifest>
